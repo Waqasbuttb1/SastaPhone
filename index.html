@@ -1,432 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Waqas FRP - FRP Bypass Tools & Apps</title>
-    <meta name="description" content="Modern FRP bypass shortcuts, tools and APK downloads. Open directly on your device or download APKs in one place.">
+    <meta name="description" content="Modern FRP bypass shortcuts, tools and APK downloads. All essential links in one place.">
+    <meta name="theme-color" content="#6366f1">
     
-    <!-- Favicon (SVG inline data URI to avoid external files) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%236366f1'/><path d='M7 12l3 3 7-7' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" type="image/svg+xml">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>W</text></svg>">
     
     <style>
-        :root {
-            --bg: #0b0b0f;
-            --bg-elev: #111118;
-            --card: #15151e;
-            --card-hover: #1a1a26;
-            --ink: #e9e9f1;
-            --ink-dim: #a7a7b8;
-            --border: #232333;
-            --accent: #6366f1;
-            --accent-2: #8b5cf6;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body {
-            height: 100%;
-            background: radial-gradient(1200px 600px at 20% -10%, rgba(99,102,241,0.08), transparent 60%),
-                        radial-gradient(900px 500px at 80% 10%, rgba(139,92,246,0.06), transparent 60%),
-                        var(--bg);
-            color: var(--ink);
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        
+        :root {
+            --bg: #09090b;
+            --card: #18181b;
+            --card-hover: #27272a;
+            --border: #27272a;
+            --text: #fafafa;
+            --text-dim: #a1a1aa;
+            --accent: #6366f1;
+            --accent-glow: rgba(99,102,241,0.15);
+            --green: #22c55e;
+            --yellow: #eab308;
+            --radius: 12px;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        .wrap {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 20px 16px 80px;
-        }
-        /* Topbar */
-        .topbar {
+        /* Header */
+        .header {
             position: sticky;
             top: 0;
-            z-index: 50;
-            backdrop-filter: blur(14px);
-            background: rgba(11, 11, 15, 0.75);
+            z-index: 100;
+            background: rgba(9,9,11,0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
-        .bar {
-            max-width: 1180px;
+        .header-inner {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 12px 16px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 12px;
-            padding: 14px 16px;
         }
-        .brand {
+        .logo {
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 700;
             font-size: 18px;
-            letter-spacing: -0.3px;
-        }
-        .logo {
-            width: 32px; 
-            height: 32px; 
-            border-radius: 10px; 
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            display: grid; 
-            place-items: center; 
-            font-weight: 800; 
-            color: white;
-        }
-        .badge {
-            font-size: 10px; 
-            padding: 4px 8px; 
-            border-radius: 999px; 
-            border: 1px solid var(--border);
-            color: var(--ink-dim);
-            background: rgba(99, 102, 241, 0.08);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .spacer { flex: 1; }
-        .navlink {
-            font-size: 13px; 
-            color: var(--ink-dim); 
             text-decoration: none;
-            padding: 8px 14px;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            font-weight: 500;
+            color: var(--text);
         }
-        .navlink:hover { 
-            color: var(--ink); 
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 4px;
+        }
+        .nav-link {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .nav-link:hover {
+            color: var(--text);
             background: var(--card);
+        }
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 16px 60px;
         }
         /* Hero */
         .hero {
-            margin: 28px 0 22px;
-            padding: 28px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
-            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 32px;
         }
-        .h1 {
-            font-size: clamp(26px, 4.2vw, 36px);
-            line-height: 1.1;
-            letter-spacing: -0.8px;
+        .hero h1 {
+            font-size: clamp(28px, 6vw, 42px);
             font-weight: 700;
-            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .sub {
-            color: var(--ink-dim);
+        .hero p {
+            color: var(--text-dim);
             font-size: 15px;
-            line-height: 1.55;
-            max-width: 70ch;
-            margin-bottom: 20px;
+            max-width: 500px;
+            margin: 0 auto 24px;
         }
         /* Search */
-        .search {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .search-box {
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 12px 16px;
-            max-width: 720px;
-            transition: all 0.2s ease;
-        }
-        .search:focus-within {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
-        }
-        .search input {
-            all: unset;
-            flex: 1;
+            border-radius: 14px;
             font-size: 15px;
-            color: var(--ink);
+            color: var(--text);
+            outline: none;
+            transition: all 0.2s;
         }
-        .search input::placeholder { color: #7f8092; }
-        .kbd {
-            font-family: "JetBrains Mono", monospace;
-            font-size: 11px;
-            padding: 4px 8px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.03);
-            color: var(--ink-dim);
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
         }
-        /* Section headers */
-        .section { margin-top: 26px; }
-        .sec-head {
+        .search-box input::placeholder {
+            color: var(--text-dim);
+        }
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-dim);
+            font-size: 16px;
+        }
+        /* Stats */
+        .stats {
             display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin: 8px 4px 12px;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+            flex-wrap: wrap;
         }
-        .sec-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: var(--ink-dim);
-            font-weight: 600;
+        .stat {
+            text-align: center;
         }
-        .sec-meta {
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stat-label {
             font-size: 12px;
-            color: var(--ink-dim);
-            font-family: "JetBrains Mono", monospace;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        /* Grid of cards */
+        /* Section */
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding: 0 4px;
+        }
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+        }
+        .section-count {
+            font-size: 12px;
+            color: var(--text-dim);
+            background: var(--card);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        /* Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 12px;
         }
+        .grid-3 {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+        /* Shortcut Card */
         .card {
-            grid-column: span 6;
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 14px;
+            border-radius: var(--radius);
+            padding: 16px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
             color: inherit;
             transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
+            cursor: pointer;
         }
         .card:hover {
             background: var(--card-hover);
-            border-color: rgba(99,102,241,0.35);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
-        .left { display: flex; align-items: center; gap: 12px; min-width: 0; }
-        .icon {
-            width: 40px; height: 40px; border-radius: 12px;
-            display: grid; place-items: center; flex: 0 0 40px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            font-size: 16px;
+        .card:active {
+            transform: translateY(0);
         }
-        .title {
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(99,102,241,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .card-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .card-title {
             font-weight: 600;
-            font-size: 14.5px;
+            font-size: 14px;
+            margin-bottom: 2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .hint {
-            font-size: 11.5px;
-            color: var(--ink-dim);
-            margin-top: 2px;
-            font-family: "JetBrains Mono", monospace;
-        }
-        .right {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-shrink: 0;
-        }
-        .pill {
+        .card-hint {
             font-size: 11px;
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.03);
-            color: var(--ink-dim);
-            font-weight: 500;
+            color: var(--text-dim);
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        .go {
-            width: 34px; height: 34px; border-radius: 10px;
-            display: grid; place-items: center;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: white;
-            font-weight: 700;
-            font-size: 14px;
-        }
-        /* APK tiles */
-        .apk { grid-column: span 4; padding: 16px; }
-        .apk .title { font-size: 14px; }
-        .dlrow {
-            margin-top: 10px;
+        .card-arrow {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .dl {
-            font-size: 12.5px;
-            padding: 8px 12px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: rgba(255,255,255,0.04);
-            color: var(--ink);
-            text-decoration: none;
-            display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-weight: 500;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .card:hover .card-arrow {
+            transform: translateX(2px);
+        }
+        /* APK Card */
+        .apk-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px;
             transition: all 0.2s ease;
         }
-        .dl:hover { 
-            border-color: var(--accent); 
-            background: rgba(99,102,241,0.08);
+        .apk-card:hover {
+            border-color: rgba(99,102,241,0.3);
+        }
+        .apk-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .apk-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(34,197,94,0.05));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .apk-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .apk-type {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+        .apk-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .apk-btn {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .apk-btn-primary {
+            background: var(--green);
+            color: #000;
+        }
+        .apk-btn-primary:hover {
+            background: #16a34a;
             transform: translateY(-1px);
         }
-        .dl .dot {
-            width: 6px; height: 6px; border-radius: 50%; background: var(--success); display: inline-block;
+        .apk-btn-backup {
+            background: rgba(234,179,8,0.15);
+            color: var(--yellow);
+            border: 1px solid rgba(234,179,8,0.3);
         }
-        .dl.backup .dot { background: var(--warning); }
-        /* Responsive grid */
-        @media (max-width: 980px) {
-            .card { grid-column: span 12; }
-            .apk { grid-column: span 6; }
-        }
-        @media (max-width: 640px) {
-            .apk { grid-column: span 12; }
-            .wrap { padding: 16px 12px 60px; }
-            .hero { padding: 20px; margin: 20px 0 16px; }
-            .bar { padding: 12px; }
+        .apk-btn-backup:hover {
+            background: rgba(234,179,8,0.25);
         }
         /* Footer */
-        .foot {
-            margin-top: 40px;
-            padding: 20px;
-            border-top: 1px dashed var(--border);
-            color: var(--ink-dim);
-            font-size: 12px;
+        .footer {
             text-align: center;
-            line-height: 1.6;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
         }
-        .foot strong { color: var(--ink); }
         .arabic {
-            font-family: "Times New Roman", serif;
-            font-size: 16px;
-            margin: 12px 0;
-            color: var(--ink);
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--text);
             direction: rtl;
         }
+        .footer-name {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: var(--text-dim);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        /* Empty State */
+        .empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-dim);
+        }
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 30px 16px;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .stats {
+                gap: 24px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .apk-buttons {
+                flex-direction: column;
+            }
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card, .apk-card {
+            animation: fadeIn 0.4s ease forwards;
+        }
+        /* Hide elements */
+        .hidden {
+            display: none !important;
+        }
         /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #232333; border-radius: 8px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2a2a3a; }
-        /* Utility classes */
-        .hidden { display: none !important; }
-        .mono { font-family: "JetBrains Mono", monospace; }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
     </style>
 </head>
 <body>
-    <!-- Top navigation -->
-    <header class="topbar">
-        <div class="bar">
-            <div class="brand">
-                <div class="logo">W</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">W</span>
                 <span>Waqas FRP</span>
-                <span class="badge">Modern</span>
-            </div>
-            <div class="spacer"></div>
-            <a class="navlink" href="#shortcuts">Shortcuts</a>
-            <a class="navlink" href="#downloads">APKs</a>
+            </a>
+            <nav class="nav-links">
+                <a href="#shortcuts" class="nav-link">Shortcuts</a>
+                <a href="#apks" class="nav-link">APK Downloads</a>
+            </nav>
         </div>
     </header>
-    <main class="wrap">
-        <!-- Hero section -->
+    <!-- Main -->
+    <main class="main">
+        <!-- Hero -->
         <section class="hero">
-            <h1 class="h1">FRP Bypass Shortcuts & Tools</h1>
-            <p class="sub">
-                Tap any card to open directly on your Android device. All the essential bypass shortcuts, 
-                hidden app launchers and APK downloads in one clean, fast interface. Works perfectly on GitHub Pages.
-            </p>
-            <div class="search">
-                <span style="opacity:.6">⌕</span>
-                <input id="q" placeholder="Search apps, packages, or tools (e.g., 'Samsung', 'YouTube', 'Chrome')…" autocomplete="off" />
-                <span class="kbd">/</span>
+            <h1>FRP Bypass Tools & Apps</h1>
+            <p>All essential FRP bypass shortcuts, hidden settings, and APK downloads in one clean interface.</p>
+            
+            <!-- Search -->
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Search apps, tools, or packages...">
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="total-shortcuts">34</div>
+                    <div class="stat-label">Shortcuts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="total-apks">24</div>
+                    <div class="stat-label">APK Files</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Free</div>
+                </div>
             </div>
         </section>
         <!-- Shortcuts Section -->
         <section class="section" id="shortcuts">
-            <div class="sec-head">
-                <div class="sec-title">App Shortcuts (Open on device)</div>
-                <div class="sec-meta mono" id="shortcut-count">64 items</div>
+            <div class="section-header">
+                <h2 class="section-title">📱 App Shortcuts</h2>
+                <span class="section-count" id="shortcuts-count">34 items</span>
             </div>
-            <div class="grid" id="shortcut-grid">
-                <!-- Populated by JavaScript -->
-            </div>
+            <div class="grid" id="shortcuts-grid"></div>
         </section>
         <!-- APK Downloads Section -->
-        <section class="section" id="downloads">
-            <div class="sec-head">
-                <div class="sec-title">APK Downloads</div>
-                <div class="sec-meta mono" id="apk-count">22 items</div>
+        <section class="section" id="apks">
+            <div class="section-header">
+                <h2 class="section-title">📦 APK Downloads</h2>
+                <span class="section-count" id="apks-count">24 items</span>
             </div>
-            <div class="grid" id="apk-grid">
-                <!-- Populated by JavaScript -->
-            </div>
+            <div class="grid grid-3" id="apks-grid"></div>
         </section>
         <!-- Footer -->
-        <footer class="foot">
+        <footer class="footer">
             <p class="arabic">وَتُعِزُ مَن تَشَاء وَتُذِلُ مَن تَشَاء</p>
-            <p><strong>Waqas Butt</strong> • Built for GitHub Pages • All links preserved from original source</p>
-            <p style="margin-top: 8px; font-size: 11px;">
-                For educational/testing purposes only. Use responsibly on devices you own or have permission to test.
-            </p>
+            <p class="footer-name">Waqas Butt</p>
+            <p class="footer-text">For educational purposes only. Use responsibly on devices you own.</p>
         </footer>
     </main>
     <script>
-        // All shortcut data (64 items) from the original HTML
+        // Shortcuts Data
         const shortcuts = [
-            { title: "Galaxy Store", intent: "intent://com.sec.android.app.samsungapps/#Intent;scheme=android-app;end", icon: "🛍️", hint: "com.sec.android.app.samsungapps" },
-            { title: "Google Quick Search", intent: "intent://com.google.android.googlequicksearchbox/#Intent;scheme=android-app;end", icon: "🔍", hint: "com.google.android.googlequicksearchbox" },
-            { title: "Settings", intent: "intent://com.android.settings/#Intent;scheme=android-app;end", icon: "⚙️", hint: "com.android.settings" },
-            { title: "Screen Smart Lock", intent: "intent://com.google.android.gms/#Intent;scheme=promote_smartlock_scheme;end", icon: "🔐", hint: "Smart Lock screen" },
-            { title: "Samsung My Files", intent: "intent://com.sec.android.app.myfiles/#Intent;scheme=android-app;end", icon: "📁", hint: "com.sec.android.app.myfiles" },
-            { title: "Huawei Files", intent: "intent://com.huawei.hidisk/#Intent;scheme=android-app;end", icon: "📂", hint: "com.huawei.hidisk" },
-            { title: "Oppo Phone Clone", intent: "intent://com.coloros.backuprestore/#Intent;scheme=android-app;end", icon: "📱", hint: "com.coloros.backuprestore" },
-            { title: "Infinix XShare", intent: "intent://com.infinix.xshare/#Intent;scheme=android-app;end", icon: "🔄", hint: "com.infinix.xshare" },
-            { title: "Vivo EasyShare", intent: "intent://com.vivo.easyshare/#Intent;scheme=android-app;end", icon: "📤", hint: "com.vivo.easyshare" },
-            { title: "FRP Bypass App", intent: "intent://com.rootjunky.frpbypass/#Intent;scheme=android-app;end", icon: "🛡️", hint: "com.rootjunky.frpbypass" },
-            { title: "YouTube", intent: "intent://com.google.android.youtube/#Intent;scheme=android-app;end", icon: "▶️", hint: "com.google.android.youtube" },
-            { title: "Chrome", intent: "intent://com.android.chrome/#Intent;scheme=android-app;end", icon: "🌐", hint: "com.android.chrome" },
-            { title: "Alliance Shield", intent: "intent://com.rrivenllc.shieldx/#Intent;scheme=android-app;end", icon: "🛡️", hint: "com.rrivenllc.shieldx" },
-            { title: "Android Hidden Settings", intent: "https://galaxy.store/setting", icon: "🔧", hint: "Galaxy Store link" },
-            { title: "Login Account", intent: "intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end", icon: "👤", hint: "Google account login" },
-            { title: "Home Launcher", intent: "intent://com.sec.android.app.launcher/#Intent;scheme=android-app;end", icon: "🏠", hint: "com.sec.android.app.launcher" },
-            { title: "Alliance Shield (Galaxy)", intent: "https://galaxystore.samsung.com/detail/com.rrivenllc.shieldx", icon: "🛡️", hint: "Galaxy Store direct link" },
-            { title: "Nova Launcher", intent: "intent://com.teslacoilsw.launcher/#Intent;scheme=android-app;end", icon: "🚀", hint: "com.teslacoilsw.launcher" },
-            { title: "Package Disabler Pro", intent: "intent://iotapps.tabs.com.iotapplication/#Intent;scheme=android-app;end", icon: "📦", hint: "IoT Application" },
-            { title: "Notification Bar", intent: "intent://com.treydev.ons/#Intent;scheme=android-app;end", icon: "🔔", hint: "com.treydev.ons" },
-            { title: "Apex Launcher", intent: "intent://com.anddoes.launcher/#Intent;scheme=android-app;end", icon: "⚡", hint: "com.anddoes.launcher" },
-            { title: "QuickShortcut Maker", intent: "intent://com.sika524.android.quickshortcut/#Intent;scheme=android-app;end", icon: "⚡", hint: "com.sika524.android.quickshortcut" },
-            { title: "ADB (USB Settings)", intent: "intent://com.sec.android.app.modemui.activities.USB.settings/#Intent;scheme=android-app;end", icon: "🔌", hint: "USB debugging settings" },
-            { title: "USB Setting", intent: "intent://com.sec.android.app.servicemodeapp/#Intent;scheme=promote_USBSettings_scheme;end", icon: "🔌", hint: "Service mode USB" },
-            { title: "Dialer Code *#0*#", intent: "tel:*#0*#", icon: "📞", hint: "Hardware test menu" },
-            { title: "Google Maps", intent: "intent://com.google.android.apps.maps/#Intent;scheme=android-app;end", icon: "🗺️", hint: "com.google.android.apps.maps" },
-            { title: "Google Assistant", intent: "intent://com.google.android.apps.googleassistant/#Intent;scheme=android-app;end", icon: "🤖", hint: "Voice assistant" },
-            { title: "Gmail", intent: "intent://com.google.android.gm/#Intent;scheme=android-app;end", icon: "✉️", hint: "com.google.android.gm" },
-            { title: "S9 Launcher", intent: "https://galaxystore.samsung.com/detail/com.s9launcher.dir.launcher", icon: "📱", hint: "Galaxy Store S9 launcher" },
-            { title: "Samsung Touch ID", intent: "intent://com.android.settings/com.samsung.android.settings.biometrics.fingerprint.FingerprintEntry/#Intent;scheme=android-app;end", icon: "👆", hint: "Fingerprint settings" },
-            { title: "Samsung Secure Folder", intent: "intent://com.samsung.knox.securefolder/#Intent;scheme=android-app;end", icon: "🔒", hint: "com.samsung.knox.securefolder" },
-            { title: "Smart Switch", intent: "intent://com.sec.android.easyMover/#Intent;scheme=android-app;end", icon: "🔄", hint: "com.sec.android.easyMover" },
-            { title: "Samsung Dialer", intent: "intent://com.samsung.android.dialer/#Intent;scheme=android-app;end", icon: "📞", hint: "com.samsung.android.dialer" },
-            { title: "Mi File Manager", intent: "intent://com.mi.android.globalFileexplorer/#Intent;scheme=android-app;end", icon: "📂", hint: "Xiaomi file manager" }
+            { title: "Galaxy Store", intent: "intent://com.sec.android.app.samsungapps/#Intent;scheme=android-app;end", icon: "🛍️", hint: "Samsung" },
+            { title: "Google Search", intent: "intent://com.google.android.googlequicksearchbox/#Intent;scheme=android-app;end", icon: "🔍", hint: "Google" },
+            { title: "Settings", intent: "intent://com.android.settings/#Intent;scheme=android-app;end", icon: "⚙️", hint: "Android" },
+            { title: "Smart Lock", intent: "intent://com.google.android.gms/#Intent;scheme=promote_smartlock_scheme;end", icon: "🔐", hint: "Google" },
+            { title: "Samsung Files", intent: "intent://com.sec.android.app.myfiles/#Intent;scheme=android-app;end", icon: "📁", hint: "Samsung" },
+            { title: "Huawei Files", intent: "intent://com.huawei.hidisk/#Intent;scheme=android-app;end", icon: "📂", hint: "Huawei" },
+            { title: "Oppo Clone", intent: "intent://com.coloros.backuprestore/#Intent;scheme=android-app;end", icon: "📱", hint: "OPPO" },
+            { title: "Infinix XShare", intent: "intent://com.infinix.xshare/#Intent;scheme=android-app;end", icon: "🔄", hint: "Infinix" },
+            { title: "Vivo EasyShare", intent: "intent://com.vivo.easyshare/#Intent;scheme=android-app;end", icon: "📤", hint: "Vivo" },
+            { title: "FRP Bypass", intent: "intent://com.rootjunky.frpbypass/#Intent;scheme=android-app;end", icon: "🛡️", hint: "RootJunky" },
+            { title: "YouTube", intent: "intent://com.google.android.youtube/#Intent;scheme=android-app;end", icon: "▶️", hint: "Google" },
+            { title: "Chrome", intent: "intent://com.android.chrome/#Intent;scheme=android-app;end", icon: "🌐", hint: "Google" },
+            { title: "Alliance Shield", intent: "intent://com.rrivenllc.shieldx/#Intent;scheme=android-app;end", icon: "🛡️", hint: "Knox" },
+            { title: "Hidden Settings", intent: "https://galaxy.store/setting", icon: "🔧", hint: "Galaxy Store" },
+            { title: "Login Account", intent: "intent://com.google.android.gsf.login.LoginActivity/#Intent;scheme=android-app;end", icon: "👤", hint: "Google" },
+            { title: "Home Launcher", intent: "intent://com.sec.android.app.launcher/#Intent;scheme=android-app;end", icon: "🏠", hint: "Samsung" },
+            { title: "Shield (Galaxy)", intent: "https://galaxystore.samsung.com/detail/com.rrivenllc.shieldx", icon: "🛡️", hint: "Galaxy Store" },
+            { title: "Nova Launcher", intent: "intent://com.teslacoilsw.launcher/#Intent;scheme=android-app;end", icon: "🚀", hint: "Launcher" },
+            { title: "Package Disabler", intent: "intent://iotapps.tabs.com.iotapplication/#Intent;scheme=android-app;end", icon: "📦", hint: "System" },
+            { title: "Notification Bar", intent: "intent://com.treydev.ons/#Intent;scheme=android-app;end", icon: "🔔", hint: "System" },
+            { title: "Apex Launcher", intent: "intent://com.anddoes.launcher/#Intent;scheme=android-app;end", icon: "⚡", hint: "Launcher" },
+            { title: "QuickShortcut", intent: "intent://com.sika524.android.quickshortcut/#Intent;scheme=android-app;end", icon: "⚡", hint: "Utility" },
+            { title: "ADB USB", intent: "intent://com.sec.android.app.modemui.activities.USB.settings/#Intent;scheme=android-app;end", icon: "🔌", hint: "Debug" },
+            { title: "USB Setting", intent: "intent://com.sec.android.app.servicemodeapp/#Intent;scheme=promote_USBSettings_scheme;end", icon: "🔌", hint: "Service" },
+            { title: "Dial *#0*#", intent: "tel:*#0*#", icon: "📞", hint: "Test Menu" },
+            { title: "Google Maps", intent: "intent://com.google.android.apps.maps/#Intent;scheme=android-app;end", icon: "🗺️", hint: "Google" },
+            { title: "Google Assistant", intent: "intent://com.google.android.apps.googleassistant/#Intent;scheme=android-app;end", icon: "🤖", hint: "Google" },
+            { title: "Gmail", intent: "intent://com.google.android.gm/#Intent;scheme=android-app;end", icon: "✉️", hint: "Google" },
+            { title: "S9 Launcher", intent: "https://galaxystore.samsung.com/detail/com.s9launcher.dir.launcher", icon: "📱", hint: "Galaxy Store" },
+            { title: "Touch ID", intent: "intent://com.android.settings/com.samsung.android.settings.biometrics.fingerprint.FingerprintEntry/#Intent;scheme=android-app;end", icon: "👆", hint: "Samsung" },
+            { title: "Secure Folder", intent: "intent://com.samsung.knox.securefolder/#Intent;scheme=android-app;end", icon: "🔒", hint: "Samsung" },
+            { title: "Smart Switch", intent: "intent://com.sec.android.easyMover/#Intent;scheme=android-app;end", icon: "🔄", hint: "Samsung" },
+            { title: "Samsung Dialer", intent: "intent://com.samsung.android.dialer/#Intent;scheme=android-app;end", icon: "📞", hint: "Samsung" },
+            { title: "Mi File Manager", intent: "intent://com.mi.android.globalFileexplorer/#Intent;scheme=android-app;end", icon: "📂", hint: "Xiaomi" }
         ];
-        // All APK download data (22 items) from the original HTML
+        // APK Downloads Data
         const apkDownloads = [
             { name: "Alliance Shield", primary: "https://github.com/addrom/bypass/raw/master/Alliance_Shield.apk", backup: "https://dl.ondex.app/Alliance_Shield.apk" },
-            { name: "MSA FRP Bypass 5.0/6.0", primary: "http://www.mediafire.com/file/1s7j6c882pbp8cy/MSA_FRP_Bypass_by_texel.apk/file", backup: "https://www.mediafire.com/file/1s7j6c882pbp8cy/MSA+FRP+Bypass+by+texel.apk" },
+            { name: "FRP Bypass 5.0/6.0", primary: "http://www.mediafire.com/file/1s7j6c882pbp8cy/MSA_FRP_Bypass_by_texel.apk/file", backup: "https://www.mediafire.com/file/1s7j6c882pbp8cy/MSA+FRP+Bypass+by+texel.apk" },
             { name: "Android 5 GAM", primary: "https://github.com/addrom/bypass/raw/master/Android_5_GAM.apk", backup: "https://dl.ondex.app/Android_5_GAM.apk" },
             { name: "Android 6 GAM", primary: "https://github.com/addrom/bypass/raw/master/Android_6_GAM.apk", backup: "https://dl.ondex.app/Android_6_GAM.apk" },
             { name: "Tecnocare Android 7", primary: "http://www.mediafire.com/file/hwasz7ptiu0if79/technocare_by_all_mobile_softwear_solutions.apk/file", backup: "https://www.mediafire.com/file/hwasz7ptiu0if79/technocare_by_all_mobile_softwear_solutions.apk/file" },
-            { name: "Android 8-9-10 GAM", primary: "https://github.com/addrom/bypass/raw/master/Android_8-9-10_GAM.apk", backup: "https://dl.ondex.app/Android_8-9-10_GAM.apk" },
+            { name: "Android 8-10 GAM", primary: "https://github.com/addrom/bypass/raw/master/Android_8-9-10_GAM.apk", backup: "https://dl.ondex.app/Android_8-9-10_GAM.apk" },
             { name: "Google Setting", primary: "https://github.com/addrom/bypass/raw/master/Google_Setting.apk", backup: "https://dl.ondex.app/Google_Setting.apk" },
             { name: "FRP Bypass", primary: "https://github.com/addrom/bypass/raw/master/FRP_Bypass.apk", backup: "https://dl.ondex.app/FRP_Bypass.apk" },
             { name: "FRP Android 7", primary: "https://github.com/addrom/bypass/raw/master/FRP_Android_7.apk", backup: "https://dl.ondex.app/FRP_Android_7.apk" },
@@ -438,110 +557,106 @@
             { name: "Menu Button", primary: "https://github.com/addrom/bypass/raw/master/Menu_Button.apk", backup: "https://dl.ondex.app/Menu_Button.apk" },
             { name: "ES File Explorer", primary: "https://github.com/addrom/bypass/raw/master/ES_File_Explorer.apk", backup: "https://dl.ondex.app/ES_File_Explorer.apk" },
             { name: "System Settings", primary: "https://github.com/addrom/bypass/raw/master/Setting.apk", backup: "https://dl.ondex.app/Setting.apk" },
-            { name: "Development Settings", primary: "https://github.com/addrom/bypass/raw/master/Development_Settings.apk", backup: "https://dl.ondex.app/Development_Settings.apk" },
+            { name: "Dev Settings", primary: "https://github.com/addrom/bypass/raw/master/Development_Settings.apk", backup: "https://dl.ondex.app/Development_Settings.apk" },
             { name: "HushSMS", primary: "https://github.com/addrom/bypass/raw/master/HushSMS.apk", backup: "https://dl.ondex.app/HushSMS.apk" },
             { name: "Phone Clone", primary: "https://github.com/addrom/bypass/raw/master/Phone_Clone.apk", backup: "https://dl.ondex.app/Phone_Clone.apk" },
             { name: "File Commander", primary: "https://github.com/addrom/bypass/raw/master/File_Commander_Manager.apk", backup: "https://dl.ondex.app/File_Commander_Manager.apk" },
-            { name: "Smart Switch Mobile", primary: "https://github.com/addrom/bypass/raw/master/Smart_Switch_Mobile.apk", backup: "https://dl.ondex.app/Smart_Switch_Mobile.apk" },
-            // Samsung Account Remove APKs
+            { name: "Smart Switch", primary: "https://github.com/addrom/bypass/raw/master/Smart_Switch_Mobile.apk", backup: "https://dl.ondex.app/Smart_Switch_Mobile.apk" },
             { name: "PDP Engine V1", primary: "https://www.mediafire.com/file/knmgo5utbb2q9r3/eu.airwatch.mdm_2017-10-19.apk/file", backup: "https://www.mediafire.com/file/knmgo5utbb2q9r3/eu.airwatch.mdm_2017-10-19.apk/file" },
             { name: "Package Disabler Pro", primary: "https://www.mediafire.com/file/2u2i94a8bjskiw4/com.ospolice.packagedisablerpro_9.8_free-www.apkhere.com.apk/file", backup: "https://www.mediafire.com/file/2u2i94a8bjskiw4/com.ospolice.packagedisablerpro_9.8_free-www.apkhere.com.apk/file" }
         ];
-        // DOM elements
-        const q = document.getElementById('q');
-        const shortcutGrid = document.getElementById('shortcut-grid');
-        const apkGrid = document.getElementById('apk-grid');
-        const shortcutCount = document.getElementById('shortcut-count');
-        const apkCount = document.getElementById('apk-count');
-        // Render shortcut cards
-        function renderShortcuts(list) {
-            shortcutGrid.innerHTML = '';
-            list.forEach(item => {
-                const a = document.createElement('a');
-                a.className = 'card';
-                a.href = item.intent;
-                a.target = '_self';
-                a.rel = 'noopener';
-                
-                a.innerHTML = `
-                    <div class="left">
-                        <div class="icon">${item.icon}</div>
+        // DOM Elements
+        const searchInput = document.getElementById('search');
+        const shortcutsGrid = document.getElementById('shortcuts-grid');
+        const apksGrid = document.getElementById('apks-grid');
+        const shortcutsCount = document.getElementById('shortcuts-count');
+        const apksCount = document.getElementById('apks-count');
+        // Render Shortcuts
+        function renderShortcuts(data) {
+            if (data.length === 0) {
+                shortcutsGrid.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>No shortcuts found</p></div>';
+                shortcutsCount.textContent = '0 items';
+                return;
+            }
+            
+            shortcutsGrid.innerHTML = data.map((item, i) => `
+                <a href="${item.intent}" class="card" style="animation-delay: ${i * 20}ms">
+                    <div class="card-icon">${item.icon}</div>
+                    <div class="card-info">
+                        <div class="card-title">${item.title}</div>
+                        <div class="card-hint">${item.hint}</div>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            `).join('');
+            
+            shortcutsCount.textContent = `${data.length} items`;
+        }
+        // Render APKs
+        function renderApks(data) {
+            if (data.length === 0) {
+                apksGrid.innerHTML = '<div class="empty"><div class="empty-icon">📦</div><p>No APKs found</p></div>';
+                apksCount.textContent = '0 items';
+                return;
+            }
+            
+            apksGrid.innerHTML = data.map((item, i) => `
+                <div class="apk-card" style="animation-delay: ${i * 20}ms">
+                    <div class="apk-header">
+                        <div class="apk-icon">📥</div>
                         <div>
-                            <div class="title">${item.title}</div>
-                            <div class="hint mono">${item.hint}</div>
+                            <div class="apk-name">${item.name}</div>
+                            <div class="apk-type">APK File</div>
                         </div>
                     </div>
-                    <div class="right">
-                        <span class="pill">Open</span>
-                        <div class="go">→</div>
-                    </div>
-                `;
-                shortcutGrid.appendChild(a);
-            });
-            shortcutCount.textContent = `${list.length} items`;
-        }
-        // Render APK cards
-        function renderApks(list) {
-            apkGrid.innerHTML = '';
-            list.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'card apk';
-                div.innerHTML = `
-                    <div>
-                        <div class="title">${item.name}</div>
-                        <div class="hint mono">APK download</div>
-                    </div>
-                    <div class="dlrow">
-                        <a class="dl" href="${item.primary}" target="_blank" rel="noopener">
-                            <span class="dot"></span> Primary
+                    <div class="apk-buttons">
+                        <a href="${item.primary}" target="_blank" rel="noopener" class="apk-btn apk-btn-primary">
+                            ⬇ Download
                         </a>
-                        <a class="dl backup" href="${item.backup}" target="_blank" rel="noopener">
-                            <span class="dot"></span> Backup
+                        <a href="${item.backup}" target="_blank" rel="noopener" class="apk-btn apk-btn-backup">
+                            ⬇ Backup
                         </a>
                     </div>
-                `;
-                apkGrid.appendChild(div);
-            });
-            apkCount.textContent = `${list.length} items`;
+                </div>
+            `).join('');
+            
+            apksCount.textContent = `${data.length} items`;
         }
-        // Filter function
-        function filterAll() {
-            const term = (q.value || '').toLowerCase().trim();
+        // Search/Filter
+        function filterContent() {
+            const query = searchInput.value.toLowerCase().trim();
             
-            const filteredShortcuts = !term ? shortcuts : shortcuts.filter(s => 
-                s.title.toLowerCase().includes(term) || 
-                s.hint.toLowerCase().includes(term) ||
-                s.intent.toLowerCase().includes(term)
-            );
+            const filteredShortcuts = query 
+                ? shortcuts.filter(s => 
+                    s.title.toLowerCase().includes(query) || 
+                    s.hint.toLowerCase().includes(query))
+                : shortcuts;
             
-            const filteredApks = !term ? apkDownloads : apkDownloads.filter(a => 
-                a.name.toLowerCase().includes(term)
-            );
+            const filteredApks = query 
+                ? apkDownloads.filter(a => 
+                    a.name.toLowerCase().includes(query))
+                : apkDownloads;
             
             renderShortcuts(filteredShortcuts);
             renderApks(filteredApks);
         }
-        // Event listeners
-        q.addEventListener('input', filterAll);
-        
-        // Keyboard shortcut for search (press "/" to focus search)
+        // Event Listeners
+        searchInput.addEventListener('input', filterContent);
+        // Keyboard shortcut
         document.addEventListener('keydown', (e) => {
-            if (e.key === '/' && e.target.tagName !== 'INPUT') {
+            if (e.key === '/' && document.activeElement !== searchInput) {
                 e.preventDefault();
-                q.focus();
+                searchInput.focus();
             }
             if (e.key === 'Escape') {
-                q.blur();
-                q.value = '';
-                filterAll();
+                searchInput.value = '';
+                searchInput.blur();
+                filterContent();
             }
         });
-        // Initial render
-        renderShortcuts(shortcuts);
-        renderApks(apkDownloads);
-        // Smooth scroll for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -549,19 +664,12 @@
                 }
             });
         });
-        // Add subtle entrance animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.card');
-            cards.forEach((card, i) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(10px)';
-                setTimeout(() => {
-                    card.style.transition = 'all 0.4s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, i * 10);
-            });
-        });
+        // Initial render
+        renderShortcuts(shortcuts);
+        renderApks(apkDownloads);
+        // Update stats
+        document.getElementById('total-shortcuts').textContent = shortcuts.length;
+        document.getElementById('total-apks').textContent = apkDownloads.length;
     </script>
 </body>
 </html>
