@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Waqas FRP - FRP Bypass Tools & Apps</title>
-    <meta name="description" content="Modern FRP bypass shortcuts, tools and APK downloads. All essential links in one place.">
+    <meta name="description"
+        content="Modern FRP bypass shortcuts, tools and APK downloads. All essential links in one place.">
     <meta name="theme-color" content="#6366f1">
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>W</text></svg>">
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>W</text></svg>">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --bg: #09090b;
             --card: #18181b;
@@ -23,15 +30,17 @@
             --text: #fafafa;
             --text-dim: #a1a1aa;
             --accent: #6366f1;
-            --accent-glow: rgba(99,102,241,0.15);
+            --accent-glow: rgba(99, 102, 241, 0.15);
             --green: #22c55e;
             --yellow: #eab308;
             --radius: 12px;
         }
+
         html {
             scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
         }
+
         body {
             font-family: 'Inter', -apple-system, system-ui, sans-serif;
             background: var(--bg);
@@ -40,16 +49,18 @@
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
+
         /* Header */
         .header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9,9,11,0.8);
+            background: rgba(9, 9, 11, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
+
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
@@ -59,6 +70,7 @@
             justify-content: space-between;
             gap: 12px;
         }
+
         .logo {
             display: flex;
             align-items: center;
@@ -68,6 +80,7 @@
             text-decoration: none;
             color: var(--text);
         }
+
         .logo-icon {
             width: 36px;
             height: 36px;
@@ -79,10 +92,12 @@
             font-weight: 800;
             font-size: 16px;
         }
+
         .nav-links {
             display: flex;
             gap: 4px;
         }
+
         .nav-link {
             padding: 8px 14px;
             border-radius: 8px;
@@ -92,22 +107,26 @@
             text-decoration: none;
             transition: all 0.2s;
         }
+
         .nav-link:hover {
             color: var(--text);
             background: var(--card);
         }
+
         /* Main Content */
         .main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 16px 60px;
         }
+
         /* Hero */
         .hero {
             text-align: center;
             padding: 40px 20px;
             margin-bottom: 32px;
         }
+
         .hero h1 {
             font-size: clamp(28px, 6vw, 42px);
             font-weight: 700;
@@ -118,18 +137,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero p {
             color: var(--text-dim);
             font-size: 15px;
             max-width: 500px;
             margin: 0 auto 24px;
         }
+
         /* Search */
         .search-box {
             max-width: 480px;
             margin: 0 auto;
             position: relative;
         }
+
         .search-box input {
             width: 100%;
             padding: 14px 20px 14px 48px;
@@ -141,13 +163,16 @@
             outline: none;
             transition: all 0.2s;
         }
+
         .search-box input:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 3px var(--accent-glow);
         }
+
         .search-box input::placeholder {
             color: var(--text-dim);
         }
+
         .search-icon {
             position: absolute;
             left: 18px;
@@ -156,6 +181,7 @@
             color: var(--text-dim);
             font-size: 16px;
         }
+
         /* Stats */
         .stats {
             display: flex;
@@ -164,24 +190,29 @@
             margin-top: 24px;
             flex-wrap: wrap;
         }
+
         .stat {
             text-align: center;
         }
+
         .stat-value {
             font-size: 24px;
             font-weight: 700;
             color: var(--accent);
         }
+
         .stat-label {
             font-size: 12px;
             color: var(--text-dim);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         /* Section */
         .section {
             margin-bottom: 40px;
         }
+
         .section-header {
             display: flex;
             align-items: center;
@@ -189,6 +220,7 @@
             margin-bottom: 16px;
             padding: 0 4px;
         }
+
         .section-title {
             font-size: 13px;
             font-weight: 600;
@@ -196,6 +228,7 @@
             letter-spacing: 1px;
             color: var(--text-dim);
         }
+
         .section-count {
             font-size: 12px;
             color: var(--text-dim);
@@ -203,15 +236,18 @@
             padding: 4px 10px;
             border-radius: 20px;
         }
+
         /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 12px;
         }
+
         .grid-3 {
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         }
+
         /* Shortcut Card */
         .card {
             background: var(--card);
@@ -226,19 +262,22 @@
             transition: all 0.2s ease;
             cursor: pointer;
         }
+
         .card:hover {
             background: var(--card-hover);
             border-color: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
+
         .card:active {
             transform: translateY(0);
         }
+
         .card-icon {
             width: 44px;
             height: 44px;
-            background: rgba(99,102,241,0.1);
+            background: rgba(99, 102, 241, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -246,10 +285,12 @@
             font-size: 20px;
             flex-shrink: 0;
         }
+
         .card-info {
             flex: 1;
             min-width: 0;
         }
+
         .card-title {
             font-weight: 600;
             font-size: 14px;
@@ -258,6 +299,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         .card-hint {
             font-size: 11px;
             color: var(--text-dim);
@@ -265,6 +307,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         .card-arrow {
             width: 32px;
             height: 32px;
@@ -278,9 +321,11 @@
             flex-shrink: 0;
             transition: transform 0.2s;
         }
+
         .card:hover .card-arrow {
             transform: translateX(2px);
         }
+
         /* APK Card */
         .apk-card {
             background: var(--card);
@@ -289,37 +334,44 @@
             padding: 18px;
             transition: all 0.2s ease;
         }
+
         .apk-card:hover {
-            border-color: rgba(99,102,241,0.3);
+            border-color: rgba(99, 102, 241, 0.3);
         }
+
         .apk-header {
             display: flex;
             align-items: center;
             gap: 12px;
             margin-bottom: 14px;
         }
+
         .apk-icon {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(34,197,94,0.05));
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.05));
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 18px;
         }
+
         .apk-name {
             font-weight: 600;
             font-size: 14px;
         }
+
         .apk-type {
             font-size: 11px;
             color: var(--text-dim);
         }
+
         .apk-buttons {
             display: flex;
             gap: 8px;
         }
+
         .apk-btn {
             flex: 1;
             padding: 10px 14px;
@@ -334,22 +386,27 @@
             gap: 6px;
             transition: all 0.2s;
         }
+
         .apk-btn-primary {
             background: var(--green);
             color: #000;
         }
+
         .apk-btn-primary:hover {
             background: #16a34a;
             transform: translateY(-1px);
         }
+
         .apk-btn-backup {
-            background: rgba(234,179,8,0.15);
+            background: rgba(234, 179, 8, 0.15);
             color: var(--yellow);
-            border: 1px solid rgba(234,179,8,0.3);
+            border: 1px solid rgba(234, 179, 8, 0.3);
         }
+
         .apk-btn-backup:hover {
-            background: rgba(234,179,8,0.25);
+            background: rgba(234, 179, 8, 0.25);
         }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -357,83 +414,110 @@
             border-top: 1px solid var(--border);
             margin-top: 40px;
         }
+
         .arabic {
             font-size: 20px;
             margin-bottom: 16px;
             color: var(--text);
             direction: rtl;
         }
+
         .footer-name {
             font-weight: 700;
             font-size: 16px;
             margin-bottom: 8px;
         }
+
         .footer-text {
             font-size: 12px;
             color: var(--text-dim);
             max-width: 400px;
             margin: 0 auto;
         }
+
         /* Empty State */
         .empty {
             text-align: center;
             padding: 60px 20px;
             color: var(--text-dim);
         }
+
         .empty-icon {
             font-size: 48px;
             margin-bottom: 16px;
             opacity: 0.5;
         }
+
         /* Responsive */
         @media (max-width: 640px) {
             .hero {
                 padding: 30px 16px;
             }
+
             .hero h1 {
                 font-size: 26px;
             }
+
             .nav-links {
                 display: none;
             }
+
             .stats {
                 gap: 24px;
             }
+
             .grid {
                 grid-template-columns: 1fr;
             }
+
             .apk-buttons {
                 flex-direction: column;
             }
         }
+
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .card, .apk-card {
+
+        .card,
+        .apk-card {
             animation: fadeIn 0.4s ease forwards;
         }
+
         /* Hide elements */
         .hidden {
             display: none !important;
         }
+
         /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--bg);
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--border);
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #3f3f46;
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -454,13 +538,13 @@
         <section class="hero">
             <h1>FRP Bypass Tools & Apps</h1>
             <p>All essential FRP bypass shortcuts, hidden settings, and APK downloads in one clean interface.</p>
-            
+
             <!-- Search -->
             <div class="search-box">
                 <span class="search-icon">🔍</span>
                 <input type="text" id="search" placeholder="Search apps, tools, or packages...">
             </div>
-            
+
             <!-- Stats -->
             <div class="stats">
                 <div class="stat">
@@ -496,7 +580,12 @@
         <!-- Footer -->
         <footer class="footer">
             <p class="arabic">وَتُعِزُ مَن تَشَاء وَتُذِلُ مَن تَشَاء</p>
-            <p class="footer-name">Waqas Butt<a href="https://www.facebook.com/itswaqasbutt"></a></p>
+            <p class="footer-name">
+                <a href="https://www.facebook.com/itswaqasbutt" target="_blank"
+                    style="text-decoration: none; color: inherit; font-size: 24px; font-weight: bold;">
+                    Waqas Butt
+                </a>
+            </p>
             <p class="footer-text">For educational purposes only. Use responsibly on devices you own.</p>
         </footer>
     </main>
@@ -578,7 +667,7 @@
                 shortcutsCount.textContent = '0 items';
                 return;
             }
-            
+
             shortcutsGrid.innerHTML = data.map((item, i) => `
                 <a href="${item.intent}" class="card" style="animation-delay: ${i * 20}ms">
                     <div class="card-icon">${item.icon}</div>
@@ -589,7 +678,7 @@
                     <div class="card-arrow">→</div>
                 </a>
             `).join('');
-            
+
             shortcutsCount.textContent = `${data.length} items`;
         }
         // Render APKs
@@ -599,7 +688,7 @@
                 apksCount.textContent = '0 items';
                 return;
             }
-            
+
             apksGrid.innerHTML = data.map((item, i) => `
                 <div class="apk-card" style="animation-delay: ${i * 20}ms">
                     <div class="apk-header">
@@ -619,24 +708,24 @@
                     </div>
                 </div>
             `).join('');
-            
+
             apksCount.textContent = `${data.length} items`;
         }
         // Search/Filter
         function filterContent() {
             const query = searchInput.value.toLowerCase().trim();
-            
-            const filteredShortcuts = query 
-                ? shortcuts.filter(s => 
-                    s.title.toLowerCase().includes(query) || 
+
+            const filteredShortcuts = query
+                ? shortcuts.filter(s =>
+                    s.title.toLowerCase().includes(query) ||
                     s.hint.toLowerCase().includes(query))
                 : shortcuts;
-            
-            const filteredApks = query 
-                ? apkDownloads.filter(a => 
+
+            const filteredApks = query
+                ? apkDownloads.filter(a =>
                     a.name.toLowerCase().includes(query))
                 : apkDownloads;
-            
+
             renderShortcuts(filteredShortcuts);
             renderApks(filteredApks);
         }
@@ -656,7 +745,7 @@
         });
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -672,4 +761,5 @@
         document.getElementById('total-apks').textContent = apkDownloads.length;
     </script>
 </body>
+
 </html>
